@@ -1,10 +1,15 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <title>Envio de Curriculum Vitae</title>
+
 <style type="text/css">
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #e9eef5;
@@ -12,6 +17,7 @@ body {
     padding: 20px;
     color: #333333;
 }
+
 .contenedor {
     width: 700px;
     margin: auto;
@@ -19,20 +25,24 @@ body {
     background-color: #ffffff;
     border: 1px solid #cccccc;
 }
+
 .encabezado {
     background-color: #164b7a;
     color: #ffffff;
     padding: 15px;
     text-align: center;
 }
+
 h1 {
     font-size: 25px;
     margin: 10px;
 }
+
 .encabezado p {
     font-size: 13px;
     margin: 8px;
 }
+
 h2 {
     font-size: 17px;
     color: #164b7a;
@@ -41,6 +51,7 @@ h2 {
     margin-top: 20px;
     margin-bottom: 12px;
 }
+
 p {
     margin: 9px 0;
     font-size: 13px;
@@ -49,6 +60,7 @@ p {
 label {
     font-weight: bold;
 }
+
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -58,6 +70,7 @@ select {
     padding: 7px;
     border-radius: 3px;
     font-size: 12px;
+    box-sizing: border-box;
 }
 
 textarea {
@@ -68,19 +81,22 @@ textarea {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     resize: vertical;
+    box-sizing: border-box;
 }
+
 .foto {
-	width: 150px;
-	height: 175px;
-	border: 1px solid #999999;
-	background-color: #f5f7fa;
-	position: relative;
-	overflow: hidden;
-	cursor: pointer;
-	margin: auto;
-	text-align: center;
-	box-sizing: border-box;
+    width: 150px;
+    height: 175px;
+    border: 1px solid #999999;
+    background-color: #f5f7fa;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    margin: auto;
+    text-align: center;
+    box-sizing: border-box;
 }
+
 .foto:before {
     content: "FOTO";
     position: absolute;
@@ -94,6 +110,7 @@ textarea {
     z-index: 1;
     pointer-events: none;
 }
+
 .foto img {
     width: 100%;
     height: 100%;
@@ -106,9 +123,11 @@ textarea {
     z-index: 2;
     pointer-events: none;
 }
+
 #foto {
     display: none;
 }
+
 .boton {
     background-color: #164b7a;
     color: #ffffff;
@@ -134,6 +153,7 @@ textarea {
 .limpiar:hover {
     background-color: #555555;
 }
+
 .pie {
     text-align: center;
     color: #777777;
@@ -142,24 +162,43 @@ textarea {
     margin-top: 18px;
     padding-top: 12px;
 }
+
 @media screen and (max-width: 760px) {
+
     .contenedor {
         width: auto;
         margin: 0;
+        padding: 15px;
     }
+
     body {
         padding: 10px;
     }
 
+    table {
+        width: 100%;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"] {
+        max-width: 100%;
+    }
+
 }
+
 </style>
 </head>
+
 <body>
+
 <div class="contenedor">
 
 <form action="#" method="post"
 enctype="multipart/form-data"
 id="formularioCV">
+
 <table width="100%" border="0" cellspacing="0" cellpadding="5">
 
 <tr>
@@ -171,158 +210,243 @@ id="formularioCV">
 <h1>CURRICULUM VITAE</h1>
 
 <p><strong>DATOS PERSONALES Y PROFESIONALES</strong></p>
+
 </div>
+
 </td>
+
 <td width="25%" align="center">
+
 <div class="foto" id="cuadroFoto">
+
 <img id="imagenFoto" src="" alt="Fotografia personal" />
 
 </div>
+
 <input type="file"
 name="foto"
 id="foto"
 accept="image/*" />
+
 </td>
+
 </tr>
+
 </table>
+
 <h2>1. DATOS PERSONALES</h2>
+
 <p>
 <label>Apellidos:</label><br />
 <input type="text" name="apellidos" size="100" />
 </p>
+
 <p>
 <label>Nombres:</label><br />
 <input type="text" name="nombre" size="100" />
 </p>
+
 <table width="100%" border="0" cellpadding="3">
+
 <tr>
+
 <td>
 <label>DNI:</label><br />
 <input type="text" name="dni" size="40" maxlength="8" />
 </td>
+
 <td>
 <label>Fecha de nacimiento:</label><br />
 <input type="date" name="fecha" />
 </td>
+
 </tr>
+
 <tr>
+
 <td>
 <label>Lugar:</label><br />
 <input type="text" name="lugar" size="40" />
 </td>
+
 <td>
 <label>Direccion:</label><br />
 <input type="text" name="direccion" size="40" />
 </td>
+
 </tr>
+
 <tr>
+
 <td>
 <label>Localidad:</label><br />
 <input type="text" name="localidad" size="40" />
 </td>
+
 <td>
 <label>Provincia:</label><br />
 <input type="text" name="provincia" size="40" />
 </td>
+
 </tr>
+
 <tr>
+
 <td>
 <label>Telefono:</label><br />
 <input type="tel" name="telefono" size="40" />
 </td>
+
 <td>
 <label>Telefono movil:</label><br />
 <input type="tel" name="movil" size="40" />
 </td>
+
 </tr>
+
 </table>
+
 <p>
 <label>Correo electronico:</label><br />
 <input type="email" name="email" size="40" />
 </p>
+
 <h2>2. FORMACION Y ESTUDIOS</h2>
+
 <p>
 <label>Titulacion:</label><br />
 <input type="text" name="titulacion" size="80" />
 </p>
+
 <p>
 <label>Idiomas:</label><br />
 <input type="text" name="idiomas" size="80" />
 </p>
+
 <p>
 <label>Conocimientos informaticos:</label><br />
 <textarea name="informatica" rows="3" cols="60"></textarea>
 </p>
+
 <p>
 <label>Cursos y seminarios:</label><br />
 <textarea name="cursos" rows="3" cols="60"></textarea>
 </p>
+
 <h2>3. EXPERIENCIA PROFESIONAL</h2>
+
 <p>
 <label>Empresa:</label><br />
 <input type="text" name="empresa" size="80" />
 </p>
+
 <p>
 <label>Fecha:</label><br />
 <input type="text" name="fecha_empresa" size="40" />
 </p>
+
 <p>
 <label>Puesto / Actividad desarrollada:</label><br />
 <textarea name="puesto" rows="3" cols="60"></textarea>
 </p>
+
 <h2>4. DATOS COMPLEMENTARIOS</h2>
+
 <p>
 <textarea name="complementarios" rows="4" cols="60"></textarea>
 </p>
+
 <br />
+
 <p>
 Todo lo expuesto anteriormente podra ser acreditado,
 en caso de solicitud.
 </p>
+
 <p align="right">
 Lugar y fecha:
 <input type="text" name="lugar_fecha" size="60" />
 </p>
+
 <br />
+
 <p align="center">
+
 <input type="submit"
 class="boton"
 value="ENVIAR CURRICULUM" />
+
 <input type="reset"
 class="limpiar"
 value="LIMPIAR" />
+
 </p>
+
 <div class="pie">
 © 2026 Alessandro @lesstech. Todos los derechos reservados.
 </div>
+
 </form>
+
 </div>
+
 <script type="text/javascript">
+
+// Abrir el selector de fotografías al hacer clic en el cuadro FOTO
+
 document.getElementById("cuadroFoto").onclick = function() {
     document.getElementById("foto").click();
 };
+
+// Mostrar la fotografía seleccionada
+
 document.getElementById("foto").onchange = function() {
+
     var archivo = this.files[0];
+
     if (archivo) {
+
         if (archivo.type.indexOf("image/") !== 0) {
+
             alert("Seleccione una imagen valida.");
+
             this.value = "";
+
             return;
         }
+
         var lector = new FileReader();
+
         lector.onload = function(e) {
+
             var imagen = document.getElementById("imagenFoto");
+
             imagen.src = e.target.result;
+
             imagen.style.display = "block";
+
         };
+
         lector.readAsDataURL(archivo);
+
     }
+
 };
+
+// Limpiar la fotografía cuando se presione LIMPIAR
+
 document.getElementById("formularioCV").onreset = function() {
+
     var imagen = document.getElementById("imagenFoto");
+
     imagen.src = "";
+
     imagen.style.display = "none";
+
 };
+
 </script>
+
 </body>
 </html>
+
