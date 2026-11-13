@@ -1,444 +1,246 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!DOCTYPE html>
+<html lang="es">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Envio de Curriculum Vitae</title>
-<style type="text/css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bienvenidos | Curriculum Vitae</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #e9eef5;
-    margin: 0;
-    padding: 20px;
     color: #333333;
 }
-.contenedor {
-    width: 700px;
-    margin: auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border: 1px solid #cccccc;
-}
-.encabezado {
+
+/* ENCABEZADO */
+
+header {
     background-color: #164b7a;
-    color: #ffffff;
-    padding: 15px;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #b9d9f5;
+}
+
+/* PORTADA */
+
+.portada {
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    padding: 40px 20px;
 }
 
-h1 {
-    font-size: 25px;
-    margin: 10px;
+.contenido {
+    max-width: 750px;
+    background-color: white;
+    padding: 55px 40px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
 }
 
-.encabezado p {
-    font-size: 13px;
-    margin: 8px;
-}
-
-h2 {
-    font-size: 17px;
+.contenido h1 {
     color: #164b7a;
-    border-bottom: 2px solid #164b7a;
-    padding-bottom: 7px;
-    margin-top: 20px;
-    margin-bottom: 12px;
+    font-size: 38px;
+    margin-bottom: 20px;
 }
 
-p {
-    margin: 9px 0;
-    font-size: 13px;
+.contenido h2 {
+    font-size: 21px;
+    color: #555555;
+    margin-bottom: 20px;
 }
 
-label {
-    font-weight: bold;
+.contenido p {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 30px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="date"],
-select {
-    border: 1px solid #b8c5d1;
-    padding: 7px;
-    border-radius: 3px;
-    font-size: 12px;
-    box-sizing: border-box;
+/* ICONO */
+
+.icono {
+    font-size: 65px;
+    margin-bottom: 20px;
 }
 
-textarea {
-    border: 1px solid #b8c5d1;
-    padding: 7px;
-    border-radius: 3px;
-    width: 95%;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    resize: vertical;
-    box-sizing: border-box;
-}
-
-.foto {
-    width: 150px;
-    height: 175px;
-    border: 1px solid #999999;
-    background-color: #f5f7fa;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    margin: auto;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-.foto:before {
-    content: "FOTO";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    transform: translateY(-50%);
-    color: #999999;
-    font-size: 18px;
-    font-weight: bold;
-    z-index: 1;
-    pointer-events: none;
-}
-
-.foto img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none;
-    z-index: 2;
-    pointer-events: none;
-}
-
-#foto {
-    display: none;
-}
+/* BOTON */
 
 .boton {
+    display: inline-block;
     background-color: #164b7a;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 .boton:hover {
     background-color: #0b3154;
+    transform: translateY(-2px);
 }
 
-.limpiar {
-    background-color: #777777;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 4px;
-}
+/* INFORMACION */
 
-.limpiar:hover {
-    background-color: #555555;
-}
-
-.pie {
+.informacion {
     text-align: center;
-    color: #777777;
-    font-size: 11px;
-    border-top: 1px solid #cccccc;
-    margin-top: 18px;
-    padding-top: 12px;
+    padding: 35px 20px;
+    background-color: #ffffff;
 }
 
-@media screen and (max-width: 760px) {
+.informacion h2 {
+    color: #164b7a;
+    margin-bottom: 15px;
+}
 
-    .contenedor {
-        width: auto;
-        margin: 0;
-        padding: 15px;
+.informacion p {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* PIE */
+
+footer {
+    background-color: #164b7a;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    font-size: 12px;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 600px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
     }
 
-    body {
-        padding: 10px;
+    nav a {
+        margin: 8px;
+        display: inline-block;
     }
 
-    table {
-        width: 100%;
+    .contenido {
+        padding: 35px 20px;
     }
 
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    input[type="date"] {
-        max-width: 100%;
+    .contenido h1 {
+        font-size: 28px;
+    }
+
+    .contenido h2 {
+        font-size: 18px;
     }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="contenedor">
+<!-- ENCABEZADO -->
 
-<form action="#" method="post"
-enctype="multipart/form-data"
-id="formularioCV">
+<header>
 
-<table width="100%" border="0" cellspacing="0" cellpadding="5">
+    <div class="logo">
+        @LESSTECH
+    </div>
 
-<tr>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="#informacion">Información</a>
+        <a href="curriculum.html">Curriculum Vitae</a>
+    </nav>
 
-<td width="75%" height="160" align="center">
+</header>
 
-<div class="encabezado">
+<!-- PORTADA PRINCIPAL -->
 
-<h1>CURRICULUM VITAE</h1>
+<section class="portada">
 
-<p><strong>DATOS PERSONALES Y PROFESIONALES</strong></p>
+    <div class="contenido">
 
-</div>
+        <div class="icono">
+            📄
+        </div>
 
-</td>
+        <h1>BIENVENIDOS</h1>
 
-<td width="25%" align="center">
+        <h2>PLATAFORMA DE CURRICULUM VITAE</h2>
 
-<div class="foto" id="cuadroFoto">
+        <p>
+            Bienvenido a nuestra plataforma de registro de Curriculum Vitae.
+            Aquí podrás ingresar tus datos personales, formación académica,
+            conocimientos, experiencia profesional y otros datos
+            complementarios de manera sencilla y ordenada.
+        </p>
 
-<img id="imagenFoto" src="" alt="Fotografia personal" />
+        <a href="curriculum.html" class="boton">
+            INGRESAR AL CURRICULUM VITAE →
+        </a>
 
-</div>
+    </div>
 
-<input type="file"
-name="foto"
-id="foto"
-accept="image/*" />
+</section>
 
-</td>
+<!-- INFORMACION -->
 
-</tr>
+<section class="informacion" id="informacion">
 
-</table>
+    <h2>Sobre esta plataforma</h2>
 
-<h2>1. DATOS PERSONALES</h2>
+    <p>
+        Este espacio ha sido diseñado para facilitar la elaboración
+        de un Curriculum Vitae digital, permitiendo organizar la
+        información personal y profesional en un solo formulario.
+    </p>
 
-<p>
-<label>Apellidos:</label><br />
-<input type="text" name="apellidos" size="100" />
-</p>
+</section>
 
-<p>
-<label>Nombres:</label><br />
-<input type="text" name="nombre" size="100" />
-</p>
+<!-- PIE DE PAGINA -->
 
-<table width="100%" border="0" cellpadding="3">
+<footer>
 
-<tr>
+    © 2026 Alessandro @lesstech. Todos los derechos reservados.
 
-<td>
-<label>DNI:</label><br />
-<input type="text" name="dni" size="40" maxlength="8" />
-</td>
-
-<td>
-<label>Fecha de nacimiento:</label><br />
-<input type="date" name="fecha" />
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-<label>Lugar:</label><br />
-<input type="text" name="lugar" size="40" />
-</td>
-
-<td>
-<label>Direccion:</label><br />
-<input type="text" name="direccion" size="40" />
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-<label>Localidad:</label><br />
-<input type="text" name="localidad" size="40" />
-</td>
-
-<td>
-<label>Provincia:</label><br />
-<input type="text" name="provincia" size="40" />
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-<label>Telefono:</label><br />
-<input type="tel" name="telefono" size="40" />
-</td>
-
-<td>
-<label>Telefono movil:</label><br />
-<input type="tel" name="movil" size="40" />
-</td>
-
-</tr>
-
-</table>
-
-<p>
-<label>Correo electronico:</label><br />
-<input type="email" name="email" size="40" />
-</p>
-
-<h2>2. FORMACION Y ESTUDIOS</h2>
-
-<p>
-<label>Titulacion:</label><br />
-<input type="text" name="titulacion" size="80" />
-</p>
-
-<p>
-<label>Idiomas:</label><br />
-<input type="text" name="idiomas" size="80" />
-</p>
-
-<p>
-<label>Conocimientos informaticos:</label><br />
-<textarea name="informatica" rows="3" cols="60"></textarea>
-</p>
-
-<p>
-<label>Cursos y seminarios:</label><br />
-<textarea name="cursos" rows="3" cols="60"></textarea>
-</p>
-
-<h2>3. EXPERIENCIA PROFESIONAL</h2>
-
-<p>
-<label>Empresa:</label><br />
-<input type="text" name="empresa" size="80" />
-</p>
-
-<p>
-<label>Fecha:</label><br />
-<input type="text" name="fecha_empresa" size="40" />
-</p>
-
-<p>
-<label>Puesto / Actividad desarrollada:</label><br />
-<textarea name="puesto" rows="3" cols="60"></textarea>
-</p>
-
-<h2>4. DATOS COMPLEMENTARIOS</h2>
-
-<p>
-<textarea name="complementarios" rows="4" cols="60"></textarea>
-</p>
-
-<br />
-
-<p>
-Todo lo expuesto anteriormente podra ser acreditado,
-en caso de solicitud.
-</p>
-
-<p align="right">
-Lugar y fecha:
-<input type="text" name="lugar_fecha" size="60" />
-</p>
-
-<br />
-
-<p align="center">
-
-<input type="submit"
-class="boton"
-value="ENVIAR CURRICULUM" />
-
-<input type="reset"
-class="limpiar"
-value="LIMPIAR" />
-
-</p>
-
-<div class="pie">
-© 2026 Alessandro @lesstech. Todos los derechos reservados.
-</div>
-
-</form>
-
-</div>
-
-<script type="text/javascript">
-
-// Abrir el selector de fotografías al hacer clic en el cuadro FOTO
-
-document.getElementById("cuadroFoto").onclick = function() {
-    document.getElementById("foto").click();
-};
-
-// Mostrar la fotografía seleccionada
-
-document.getElementById("foto").onchange = function() {
-
-    var archivo = this.files[0];
-
-    if (archivo) {
-
-        if (archivo.type.indexOf("image/") !== 0) {
-
-            alert("Seleccione una imagen valida.");
-
-            this.value = "";
-
-            return;
-        }
-
-        var lector = new FileReader();
-
-        lector.onload = function(e) {
-
-            var imagen = document.getElementById("imagenFoto");
-
-            imagen.src = e.target.result;
-
-            imagen.style.display = "block";
-
-        };
-
-        lector.readAsDataURL(archivo);
-
-    }
-
-};
-
-// Limpiar la fotografía cuando se presione LIMPIAR
-
-document.getElementById("formularioCV").onreset = function() {
-
-    var imagen = document.getElementById("imagenFoto");
-
-    imagen.src = "";
-
-    imagen.style.display = "none";
-
-};
-
-</script>
+</footer>
 
 </body>
 </html>
