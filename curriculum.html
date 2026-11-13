@@ -1,15 +1,10 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
 <title>Envio de Curriculum Vitae</title>
-
 <style type="text/css">
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #e9eef5;
@@ -17,7 +12,6 @@ body {
     padding: 20px;
     color: #333333;
 }
-
 .contenedor {
     width: 700px;
     margin: auto;
@@ -25,7 +19,6 @@ body {
     background-color: #ffffff;
     border: 1px solid #cccccc;
 }
-
 .encabezado {
     background-color: #164b7a;
     color: #ffffff;
@@ -135,6 +128,10 @@ textarea {
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .boton:hover {
@@ -371,16 +368,21 @@ Lugar y fecha:
 <br />
 
 <p align="center">
-<a href="index.html" class="volver">
+
+<a href="index.html" class="boton">
 VOLVER AL INICIO
 </a>
+
 <input type="submit"
 class="boton"
 value="ENVIAR CURRICULUM" />
+
 <input type="reset"
 class="limpiar"
 value="LIMPIAR" />
+
 </p>
+
 <div class="pie">
 © 2026 Alessandro @lesstech. Todos los derechos reservados.
 </div>
@@ -390,9 +392,11 @@ value="LIMPIAR" />
 </div>
 
 <script type="text/javascript">
+
 document.getElementById("cuadroFoto").onclick = function() {
     document.getElementById("foto").click();
 };
+
 document.getElementById("foto").onchange = function() {
 
     var archivo = this.files[0];
@@ -404,21 +408,37 @@ document.getElementById("foto").onchange = function() {
             this.value = "";
             return;
         }
+
         var lector = new FileReader();
+
         lector.onload = function(e) {
+
             var imagen = document.getElementById("imagenFoto");
+
             imagen.src = e.target.result;
+
             imagen.style.display = "block";
+
         };
+
         lector.readAsDataURL(archivo);
+
     }
+
 };
+
 document.getElementById("formularioCV").onreset = function() {
+
     var imagen = document.getElementById("imagenFoto");
+
     imagen.src = "";
+
     imagen.style.display = "none";
 
 };
+
 </script>
+
 </body>
 </html>
+
