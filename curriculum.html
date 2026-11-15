@@ -228,7 +228,8 @@ textarea {
 <input type="file"
 name="foto"
 id="foto"
-accept="image/*" />
+accept="image/*"
+required="required" />
 
 </td>
 
@@ -240,12 +241,12 @@ accept="image/*" />
 
 <p>
 <label>Apellidos:</label><br />
-<input type="text" name="apellidos" size="100" />
+<input type="text" name="apellidos" size="100" required="required" />
 </p>
 
 <p>
 <label>Nombres:</label><br />
-<input type="text" name="nombre" size="100" />
+<input type="text" name="nombre" size="100" required="required" />
 </p>
 
 <table width="100%" border="0" cellpadding="3">
@@ -254,12 +255,12 @@ accept="image/*" />
 
 <td>
 <label>DNI:</label><br />
-<input type="text" name="dni" size="40" maxlength="8" />
+<input type="text" name="dni" size="40" maxlength="8" required="required" />
 </td>
 
 <td>
 <label>Fecha de nacimiento:</label><br />
-<input type="date" name="fecha" />
+<input type="date" name="fecha" required="required" />
 </td>
 
 </tr>
@@ -268,12 +269,12 @@ accept="image/*" />
 
 <td>
 <label>Lugar:</label><br />
-<input type="text" name="lugar" size="40" />
+<input type="text" name="lugar" size="40" required="required" />
 </td>
 
 <td>
 <label>Direccion:</label><br />
-<input type="text" name="direccion" size="40" />
+<input type="text" name="direccion" size="40" required="required" />
 </td>
 
 </tr>
@@ -282,12 +283,12 @@ accept="image/*" />
 
 <td>
 <label>Localidad:</label><br />
-<input type="text" name="localidad" size="40" />
+<input type="text" name="localidad" size="40" required="required" />
 </td>
 
 <td>
 <label>Provincia:</label><br />
-<input type="text" name="provincia" size="40" />
+<input type="text" name="provincia" size="40" required="required" />
 </td>
 
 </tr>
@@ -296,12 +297,12 @@ accept="image/*" />
 
 <td>
 <label>Telefono:</label><br />
-<input type="tel" name="telefono" size="40" />
+<input type="tel" name="telefono" size="40" required="required" />
 </td>
 
 <td>
 <label>Telefono movil:</label><br />
-<input type="tel" name="movil" size="40" />
+<input type="tel" name="movil" size="40" required="required" />
 </td>
 
 </tr>
@@ -310,52 +311,52 @@ accept="image/*" />
 
 <p>
 <label>Correo electronico:</label><br />
-<input type="email" name="email" size="40" />
+<input type="email" name="email" size="40" required="required" />
 </p>
 
 <h2>2. FORMACION Y ESTUDIOS</h2>
 
 <p>
 <label>Titulacion:</label><br />
-<input type="text" name="titulacion" size="80" />
+<input type="text" name="titulacion" size="80" required="required" />
 </p>
 
 <p>
 <label>Idiomas:</label><br />
-<input type="text" name="idiomas" size="80" />
+<input type="text" name="idiomas" size="80" required="required" />
 </p>
 
 <p>
 <label>Conocimientos informaticos:</label><br />
-<textarea name="informatica" rows="3" cols="60"></textarea>
+<textarea name="informatica" rows="3" cols="60" required="required"></textarea>
 </p>
 
 <p>
 <label>Cursos y seminarios:</label><br />
-<textarea name="cursos" rows="3" cols="60"></textarea>
+<textarea name="cursos" rows="3" cols="60" required="required"></textarea>
 </p>
 
 <h2>3. EXPERIENCIA PROFESIONAL</h2>
 
 <p>
 <label>Empresa:</label><br />
-<input type="text" name="empresa" size="80" />
+<input type="text" name="empresa" size="80" required="required" />
 </p>
 
 <p>
 <label>Fecha:</label><br />
-<input type="text" name="fecha_empresa" size="40" />
+<input type="text" name="fecha_empresa" size="40" required="required" />
 </p>
 
 <p>
 <label>Puesto / Actividad desarrollada:</label><br />
-<textarea name="puesto" rows="3" cols="60"></textarea>
+<textarea name="puesto" rows="3" cols="60" required="required"></textarea>
 </p>
 
 <h2>4. DATOS COMPLEMENTARIOS</h2>
 
 <p>
-<textarea name="complementarios" rows="4" cols="60"></textarea>
+<textarea name="complementarios" rows="4" cols="60" required="required"></textarea>
 </p>
 
 <br />
@@ -367,7 +368,7 @@ en caso de solicitud.
 
 <p align="right">
 Lugar y fecha:
-<input type="text" name="lugar_fecha" size="60" />
+<input type="text" name="lugar_fecha" size="60" required="required" />
 </p>
 
 <br />
@@ -400,9 +401,13 @@ value="LIMPIAR" />
 
 <script type="text/javascript">
 
+// ABRIR SELECTOR DE FOTOGRAFIA
+
 document.getElementById("cuadroFoto").onclick = function() {
     document.getElementById("foto").click();
 };
+
+// MOSTRAR VISTA PREVIA DE LA FOTOGRAFIA
 
 document.getElementById("foto").onchange = function() {
 
@@ -434,6 +439,8 @@ document.getElementById("foto").onchange = function() {
 
 };
 
+// LIMPIAR LA VISTA PREVIA AL REINICIAR EL FORMULARIO
+
 document.getElementById("formularioCV").onreset = function() {
 
     var imagen = document.getElementById("imagenFoto");
@@ -444,20 +451,42 @@ document.getElementById("formularioCV").onreset = function() {
 
 };
 
-// FUNCION CORREGIDA DEL BOTON ENVIAR CURRICULUM
+// FUNCION DEL BOTON ENVIAR CURRICULUM
 
 function enviarCurriculum() {
 
     var formulario = document.getElementById("formularioCV");
 
+    // COMPROBAR QUE TODOS LOS CAMPOS ESTEN COMPLETOS
+
     if (!formulario.checkValidity()) {
+
         formulario.reportValidity();
+
         return false;
+
     }
 
-    alert("El formulario Curriculum Vitae se ha validado correctamente.");
+    // COMPROBAR QUE SE HAYA SELECCIONADO UNA FOTOGRAFIA
+
+    var foto = document.getElementById("foto");
+
+    if (foto.files.length === 0) {
+
+        alert("Debe seleccionar una fotografia para continuar.");
+
+        foto.click();
+
+        return false;
+
+    }
+
+    // MENSAJE DE VALIDACION
+
+    alert("¡FELICITACIONES!\n\nTodos los campos del Curriculum Vitae estan completos y han sido validados correctamente.");
 
     return false;
+
 }
 
 </script>
